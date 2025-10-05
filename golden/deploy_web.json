@@ -1,0 +1,13 @@
+{
+  "task": "deploy_web",
+  "description": "Pull, restart, and verify the main web container.",
+  "parameters": { "TAG": "latest", "ENV": "production" },
+  "steps": [
+    {"id":"pull","cmd":"docker compose -f /opt/apps/yourapp/docker-compose.yml pull web:${TAG}"},
+    {"id":"up","cmd":"docker compose -f /opt/apps/yourapp/docker-compose.yml up -d web"},
+    {"id":"verify","cmd":"/usr/local/bin/verify.sh web \"http://127.0.0.1:8000/health\" \"OK\""}
+  ],
+  "rollback": [
+    {"id":"rollback","cmd":"docker compose -f /opt/apps/yourapp/docker-compose.yml up -d web"}
+  ]
+}

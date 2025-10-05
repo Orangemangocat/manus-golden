@@ -1,0 +1,7 @@
+{
+  "task": "snapshot",
+  "description": "Capture system status and write proof.",
+  "steps": [
+    {"id":"snap","cmd":"/usr/local/bin/snapshot.sh"}
+  ]
+}

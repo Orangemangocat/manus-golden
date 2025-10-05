@@ -1,0 +1,7 @@
+{
+  "task": "tls_renew",
+  "description": "Renew certs and reload Nginx.",
+  "steps": [
+    {"id":"renew","cmd":"/usr/local/bin/tls-renew"}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "task": "db_backup",
+  "description": "Dump PostgreSQL database and compress backup.",
+  "parameters": { "DB_URL": "postgres://user:pass@127.0.0.1:5432/db" },
+  "steps": [
+    {"id":"dump","cmd":"/usr/bin/env bash -lc 'pg_dump \"$DB_URL\" | gzip > /var/lib/manus/backups/db_$(date +%F_%H%M).sql.gz'"},
+    {"id":"proof","cmd":"/usr/local/bin/proof db_backup"}
+  ]
+}
