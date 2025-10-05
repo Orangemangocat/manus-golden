@@ -3,7 +3,7 @@
 
 ## 1. System Overview
 - OS: Ubuntu 22.04 LTS
-- Services: Nginx, Docker Compose, PostgreSQL, Manus Runner/Bridge
+- Services: Nginx, Redis, PostgreSQL, Manus Runner/Bridge
 - Paths:
   - /usr/local/bin/ : scripts
   - /etc/manus/     : configs + golden plans + knowledge
